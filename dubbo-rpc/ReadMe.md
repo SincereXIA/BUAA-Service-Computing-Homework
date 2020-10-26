@@ -1,3 +1,90 @@
+# 使用 Apache Dubbo 对外提供 RPC 服务
+
+## 0. 运行环境
+
+- OS：64bit Mac OS X 10.15.7 19H2
+- Kernel：x86_64 Darwin 19.6.0
+
+## 1. 配置 Dubbo 开发环境
+
+1. 安装 JDK 环境
+
+   目前，Oracle 官网最新的 JDK 版本为 15，但出于兼容性考虑，下载安装 JDK8 环境，下载地址：https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html
+
+   在下载页面中，找到对应的平台进行下载，并完成安装
+
+   ![dyC3sO](https://oss.sumblog.cn/uPic/dyC3sO.png)
+
+   安装之后在终端检查 java 版本：
+
+   ![DORhuT](https://oss.sumblog.cn/uPic/DORhuT.png)
+
+2. 创建 Dubbo 工程项目
+
+   - 使用 Jetbrains IDEA 作为集成开发环境，新建 Java 项目
+
+     ![nrDeU8](https://oss.sumblog.cn/uPic/nrDeU8.png)
+
+   - 前往 dubbo 官方 github 仓库：https://github.com/apache/dubbo，按照 ReadMe 中的 Getting started 说明，引入 dubbo 依赖：
+
+     在项目根目录下的 pom.xml 文件中加入以下依赖项：
+
+     ```xml
+     <properties>
+         <dubbo.version>2.7.8</dubbo.version>
+     </properties>
+         
+     <dependencies>
+         <dependency>
+             <groupId>org.apache.dubbo</groupId>
+             <artifactId>dubbo</artifactId>
+             <version>${dubbo.version}</version>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.dubbo</groupId>
+             <artifactId>dubbo-dependencies-zookeeper</artifactId>
+             <version>${dubbo.version}</version>
+             <type>pom</type>
+         </dependency>
+     </dependencies>
+     ```
+
+   - 点击 Maven Reload 按钮，下载安装所需依赖：
+
+     ![asxdze](https://oss.sumblog.cn/uPic/asxdze.png)
+
+## 2. 服务接口定义、实现
+
+- 创建文件 Person.java 定义 Person 接口：
+
+  ```java
+  public interface Person {
+  
+      public void setName(String name);
+  
+      public String getName();
+  
+      public void setAge(int age);
+  
+      public int getAge();
+  
+      public void setGender(boolean gender);
+  
+      public boolean getGender();
+  
+      public String sayHello();
+  
+  }
+  ```
+
+- 创建文件 PersonImpl.java，对定义的 Person 接口完成实现：
+
+  ```
+  
+  ```
+
+  
+
 ## 安装 ZooKeeper
 
 https://zookeeper.apache.org/
