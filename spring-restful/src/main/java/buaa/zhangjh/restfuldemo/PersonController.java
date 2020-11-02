@@ -7,6 +7,7 @@ import java.security.cert.TrustAnchor;
 
 @RestController
 public class PersonController {
+    Person p;
 
     @GetMapping("/person")
     public Person person(@RequestParam(value="name", defaultValue = "Zhangjh")
@@ -15,6 +16,34 @@ public class PersonController {
                          int age,
                          @RequestParam(value="gender", defaultValue = "1")
                          boolean gender){
-        return new Person(name, age, gender);
+        p = new Person(name, age, gender);
+        return p;
     }
+
+    @GetMapping("/person/sayhello")
+    public String sayHello() {
+        return "Hello, I'm " + p.name;
+    }
+
+    @GetMapping("/person/setage")
+    public boolean setAge(@RequestParam(value = "age")
+                                   String age) {
+        p.setAge(Integer.parseInt(age));
+        return true;
+    }
+    @GetMapping("/person/setgender")
+    public boolean setGender(@RequestParam(value = "gender")
+                                   String gender) {
+        p.setGender(Boolean.parseBoolean(gender));
+        return true;
+    }
+    @GetMapping("/person/setName")
+    public boolean setName(@RequestParam(value = "name")
+                          String name) {
+        p.setName(name);
+        return true;
+    }
+
+
+
 }

@@ -15,14 +15,14 @@ public class PersonStateful {
 
     public void setName(String name) {
         this.name = name;
-        //  第1步：设置key-value对
+        //  设置key-value对
         MessageContext mc = MessageContext.getCurrentMessageContext();
         ServiceGroupContext sgc = mc.getServiceGroupContext();
         sgc.setProperty("name", name);
     }
 
     public String getName() {
-        //  第1步：获得key-value对中的value
+        //  获得key-value对中的value
         MessageContext mc = MessageContext.getCurrentMessageContext();
         ServiceGroupContext sgc =  mc.getServiceGroupContext();
         String name = (String) sgc.getProperty("name");
@@ -46,7 +46,7 @@ public class PersonStateful {
     }
 
     public String sayHello(){
-        //  第1步：获得key-value对中的value
+        //  获得key-value对中的value
         MessageContext mc = MessageContext.getCurrentMessageContext();
         ServiceGroupContext sgc =  mc.getServiceGroupContext();
         String name = (String) sgc.getProperty("name");

@@ -36,8 +36,5 @@ public class Main {
         PersonStatefulStub.SayHelloResponse response2 = personStateful.sayHello(sayHelloState);
         System.out.println(response2.get_return());
 
-
-
-	// write your code here
     }
 }
