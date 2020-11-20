@@ -1,7 +1,5 @@
 package buaa.zhangjh.restfuldemo;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.cert.TrustAnchor;
 
@@ -25,25 +23,25 @@ public class PersonController {
         return "Hello, I'm " + p.name;
     }
 
-    @GetMapping("/person/setage")
+    @RequestMapping(value = "/person/age", method = RequestMethod.PUT)
     public boolean setAge(@RequestParam(value = "age")
                                    String age) {
         p.setAge(Integer.parseInt(age));
         return true;
     }
-    @GetMapping("/person/setgender")
+
+
+    @RequestMapping(value = "/person/gender", method = RequestMethod.PUT)
     public boolean setGender(@RequestParam(value = "gender")
                                    String gender) {
         p.setGender(Boolean.parseBoolean(gender));
         return true;
     }
-    @GetMapping("/person/setName")
+
+    @RequestMapping(value = "/person/name", method = RequestMethod.PUT)
     public boolean setName(@RequestParam(value = "name")
                           String name) {
         p.setName(name);
         return true;
     }
-
-
-
 }
