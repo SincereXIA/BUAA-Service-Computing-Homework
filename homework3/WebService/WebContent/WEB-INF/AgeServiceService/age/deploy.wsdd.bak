@@ -1,0 +1,29 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from AgeServiceService WSDL service -->
+
+  <service name="AgeService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://age"/>
+      <parameter name="wsdlServiceElement" value="AgeServiceService"/>
+      <parameter name="schemaQualified" value="http://age"/>
+      <parameter name="wsdlServicePort" value="AgeService"/>
+      <parameter name="className" value="age.AgeServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="AgeService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getAge" qname="operNS:getAge" xmlns:operNS="http://age" returnQName="retNS:getAgeReturn" xmlns:retNS="http://age" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:cardID" xmlns:pns="http://age" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getAge"/>
+
+  </service>
+</deployment>

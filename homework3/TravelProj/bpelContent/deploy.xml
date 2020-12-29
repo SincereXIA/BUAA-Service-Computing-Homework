@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:age="http://age" xmlns:gender="http://gender" xmlns:legal="http://legal" xmlns:province="http://province" xmlns:sample="http://travel.buaa.sumblog.cn/bpel/sample" xmlns:travel="http://travel">
+  <process name="sample:TravelProcess">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="sample:TravelProcessService" port="TravelProcessPort"/>
+    </provide>
+    <invoke partnerLink="pay">
+      <service name="travel:payServiceService" port="payService"/>
+    </invoke>
+    <invoke partnerLink="legal">
+      <service name="legal:LegalServiceService" port="LegalService"/>
+    </invoke>
+    <invoke partnerLink="age">
+      <service name="age:AgeServiceService" port="AgeService"/>
+    </invoke>
+    <invoke partnerLink="gender">
+      <service name="gender:GenderServiceService" port="GenderService"/>
+    </invoke>
+    <invoke partnerLink="province">
+      <service name="province:ProvinceServiceService" port="ProvinceService"/>
+    </invoke>
+  </process>
+</deploy>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://age" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://age" xmlns:intf="http://age" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://age" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getAge">
+    <complexType>
+     <sequence>
+      <element name="cardID" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAgeResponse">
+    <complexType>
+     <sequence>
+      <element name="getAgeReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getAgeRequest">
+
+      <wsdl:part element="impl:getAge" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAgeResponse">
+
+      <wsdl:part element="impl:getAgeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AgeService">
+
+      <wsdl:operation name="getAge">
+
+         <wsdl:input message="impl:getAgeRequest" name="getAgeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAgeResponse" name="getAgeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AgeServiceSoapBinding" type="impl:AgeService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getAge">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAgeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAgeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AgeServiceService">
+
+      <wsdl:port binding="impl:AgeServiceSoapBinding" name="AgeService">
+
+         <wsdlsoap:address location="http://localhost:8080/WebService/services/AgeService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
