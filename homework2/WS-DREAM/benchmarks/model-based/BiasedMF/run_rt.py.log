@@ -1,0 +1,26 @@
+2020-11-28 11:01:04,147 (pid-18157): ==========================================
+2020-11-28 11:01:04,148 (pid-18157): configs as follows:
+2020-11-28 11:01:04,148 (pid-18157): parallelMode = True
+2020-11-28 11:01:04,148 (pid-18157): dataType = rt
+2020-11-28 11:01:04,148 (pid-18157): dataPath = ../../../data/
+2020-11-28 11:01:04,148 (pid-18157): metrics = ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE']
+2020-11-28 11:01:04,148 (pid-18157): saveLog = True
+2020-11-28 11:01:04,148 (pid-18157): exeFile = run_rt.py
+2020-11-28 11:01:04,148 (pid-18157): maxIter = 300
+2020-11-28 11:01:04,148 (pid-18157): debugMode = False
+2020-11-28 11:01:04,148 (pid-18157): saveTimeInfo = False
+2020-11-28 11:01:04,148 (pid-18157): rounds = 20
+2020-11-28 11:01:04,148 (pid-18157): etaInit = 0.01
+2020-11-28 11:01:04,148 (pid-18157): workPath = /home/zhangjh/workspace/BUAA-Service-Computing-Homework/homework2/WS-DREAM/benchmarks/model-based/BiasedMF
+2020-11-28 11:01:04,149 (pid-18157): density = [0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
+2020-11-28 11:01:04,149 (pid-18157): dataName = dataset#1
+2020-11-28 11:01:04,149 (pid-18157): outPath = result/
+2020-11-28 11:01:04,149 (pid-18157): logFile = run_rt.py.log
+2020-11-28 11:01:04,149 (pid-18157): dimension = 10
+2020-11-28 11:01:04,149 (pid-18157): lambda = 20
+2020-11-28 11:01:04,149 (pid-18157): ==============================================
+2020-11-28 11:01:04,149 (pid-18157): BiasedMF: Biased Matrix Factorization
+2020-11-28 11:01:04,149 (pid-18157): Loading data: /home/zhangjh/workspace/BUAA-Service-Computing-Homework/homework2/WS-DREAM/data/dataset#1/rtMatrix.txt
+2020-11-28 11:01:06,307 (pid-18157): Data size: 339 users * 5825 services
+2020-11-28 11:01:06,307 (pid-18157): Loading data done.
+2020-11-28 11:01:06,346 (pid-18157): ----------------------------------------------

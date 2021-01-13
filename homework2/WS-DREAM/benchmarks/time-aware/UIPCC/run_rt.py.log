@@ -1,0 +1,24 @@
+2020-11-21 10:12:00,735 (pid-7031): ==========================================
+2020-11-21 10:12:00,735 (pid-7031): configs as follows:
+2020-11-21 10:12:00,735 (pid-7031): parallelMode = True
+2020-11-21 10:12:00,735 (pid-7031): dataType = rt
+2020-11-21 10:12:00,735 (pid-7031): dataPath = ../../../data/
+2020-11-21 10:12:00,735 (pid-7031): metrics = ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE']
+2020-11-21 10:12:00,736 (pid-7031): saveLog = True
+2020-11-21 10:12:00,736 (pid-7031): exeFile = run_rt.py
+2020-11-21 10:12:00,736 (pid-7031): debugMode = False
+2020-11-21 10:12:00,736 (pid-7031): saveTimeInfo = False
+2020-11-21 10:12:00,736 (pid-7031): rounds = 20
+2020-11-21 10:12:00,736 (pid-7031): workPath = /home/zhangjh/workspace/BUAA-Service-Computing-Homework/homework2/WS-DREAM/benchmarks/time-aware/UIPCC
+2020-11-21 10:12:00,736 (pid-7031): density = [0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
+2020-11-21 10:12:00,736 (pid-7031): dataName = dataset#2
+2020-11-21 10:12:00,736 (pid-7031): topK = 10
+2020-11-21 10:12:00,736 (pid-7031): outPath = result/
+2020-11-21 10:12:00,737 (pid-7031): logFile = run_rt.py.log
+2020-11-21 10:12:00,737 (pid-7031): lambda = 0.8
+2020-11-21 10:12:00,737 (pid-7031): ==============================================
+2020-11-21 10:12:00,737 (pid-7031): Approach: [UPCC, IPCC, UIPCC][TSC 2011]
+2020-11-21 10:12:00,737 (pid-7031): Loading data: /home/zhangjh/workspace/BUAA-Service-Computing-Homework/homework2/WS-DREAM/data/dataset#2/rtdata.txt
+2020-11-21 10:12:49,673 (pid-7031): Data size: 142 users * 4500 services * 64 timeslices
+2020-11-21 10:12:50,269 (pid-7031): Loading data done.
+2020-11-21 10:12:50,269 (pid-7031): ----------------------------------------------

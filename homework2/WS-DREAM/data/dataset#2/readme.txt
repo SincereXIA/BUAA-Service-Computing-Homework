@@ -33,10 +33,6 @@ dataset:
   World Web Services”, IEEE Transactions on Services Computing , vol.7, no.1, 
   pp.32-39, 2014.
 
-- Yilei Zhang, Zibin Zheng, and Michael R. Lyu, "WSPred: A Time-Aware 
-  Personalized QoS Prediction Framework for Web Services", in Proceedings of 
-  the 22th IEEE Symposium on Software Reliability Engineering (ISSRE), 2011.
-
 IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE THE ABOVE PAPER. 
 THANKS!
 

@@ -1,0 +1,21 @@
+2020-11-21 11:13:36,912 (pid-7168): ==========================================
+2020-11-21 11:13:36,913 (pid-7168): configs as follows:
+2020-11-21 11:13:36,913 (pid-7168): parallelMode = True
+2020-11-21 11:13:36,913 (pid-7168): dataType = tp
+2020-11-21 11:13:36,913 (pid-7168): dataPath = ../../../data/
+2020-11-21 11:13:36,913 (pid-7168): metrics = ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE']
+2020-11-21 11:13:36,913 (pid-7168): saveLog = True
+2020-11-21 11:13:36,913 (pid-7168): exeFile = run_tp.py
+2020-11-21 11:13:36,913 (pid-7168): debugMode = False
+2020-11-21 11:13:36,913 (pid-7168): saveTimeInfo = False
+2020-11-21 11:13:36,913 (pid-7168): rounds = 20
+2020-11-21 11:13:36,914 (pid-7168): workPath = /home/zhangjh/workspace/BUAA-Service-Computing-Homework/homework2/WS-DREAM/benchmarks/time-aware/UIPCC
+2020-11-21 11:13:36,914 (pid-7168): density = [0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
+2020-11-21 11:13:36,914 (pid-7168): dataName = dataset#2
+2020-11-21 11:13:36,914 (pid-7168): topK = 10
+2020-11-21 11:13:36,914 (pid-7168): outPath = result/
+2020-11-21 11:13:36,914 (pid-7168): logFile = run_tp.py.log
+2020-11-21 11:13:36,914 (pid-7168): lambda = 0.4
+2020-11-21 11:13:36,914 (pid-7168): ==============================================
+2020-11-21 11:13:36,915 (pid-7168): Approach: [UPCC, IPCC, UIPCC][TSC 2011]
+2020-11-21 11:13:36,915 (pid-7168): Loading data: /home/zhangjh/workspace/BUAA-Service-Computing-Homework/homework2/WS-DREAM/data/dataset#2/tpdata.txt

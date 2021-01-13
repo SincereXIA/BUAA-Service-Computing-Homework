@@ -1,0 +1,86 @@
+2020-11-21 14:50:11,962 (pid-7835): ==========================================
+2020-11-21 14:50:11,962 (pid-7835): configs as follows:
+2020-11-21 14:50:11,962 (pid-7835): parallelMode = True
+2020-11-21 14:50:11,962 (pid-7835): dataType = rt
+2020-11-21 14:50:11,962 (pid-7835): dataPath = ../../../data/
+2020-11-21 14:50:11,962 (pid-7835): metrics = ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE']
+2020-11-21 14:50:11,963 (pid-7835): saveLog = True
+2020-11-21 14:50:11,963 (pid-7835): exeFile = run_rt.py
+2020-11-21 14:50:11,963 (pid-7835): maxIter = 300
+2020-11-21 14:50:11,963 (pid-7835): debugMode = False
+2020-11-21 14:50:11,963 (pid-7835): saveTimeInfo = False
+2020-11-21 14:50:11,963 (pid-7835): rounds = 20
+2020-11-21 14:50:11,963 (pid-7835): workPath = /home/zhangjh/workspace/BUAA-Service-Computing-Homework/homework2/WS-DREAM/benchmarks/time-aware/NTF
+2020-11-21 14:50:11,963 (pid-7835): density = [0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
+2020-11-21 14:50:11,963 (pid-7835): dataName = dataset#2
+2020-11-21 14:50:11,963 (pid-7835): outPath = result/
+2020-11-21 14:50:11,963 (pid-7835): logFile = run_rt.py.log
+2020-11-21 14:50:11,964 (pid-7835): dimension = 10
+2020-11-21 14:50:11,964 (pid-7835): lambda = 35
+2020-11-21 14:50:11,964 (pid-7835): ==============================================
+2020-11-21 14:50:11,964 (pid-7835): NTF: Non-negative Tensor Factorization [WWW 2014]
+2020-11-21 14:50:11,964 (pid-7835): Loading data: /home/zhangjh/workspace/BUAA-Service-Computing-Homework/homework2/WS-DREAM/data/dataset#2/rtdata.txt
+2020-11-21 14:50:59,475 (pid-7835): Data size: 142 users * 4500 services * 64 timeslices
+2020-11-21 14:50:59,762 (pid-7835): Loading data done.
+2020-11-21 14:50:59,763 (pid-7835): ----------------------------------------------
+2020-11-21 14:51:01,982 (pid-7850): density=0.05,  1-round starts.
+2020-11-21 14:51:02,954 (pid-7851): density=0.05,  2-round starts.
+2020-11-21 14:51:08,616 (pid-7853): density=0.05,  4-round starts.
+2020-11-21 14:51:07,669 (pid-7852): density=0.05,  3-round starts.
+2020-11-21 14:54:32,990 (pid-7854): density=0.05,  5-round starts.
+2020-11-21 14:54:35,338 (pid-7855): density=0.05,  6-round starts.
+2020-11-21 14:59:30,981 (pid-7856): density=0.05,  7-round starts.
+2020-11-21 14:59:39,767 (pid-7881): density=0.05, 10-round starts.
+2020-11-21 14:59:39,362 (pid-7867): density=0.05,  9-round starts.
+2020-11-21 14:59:34,938 (pid-7857): density=0.05,  8-round starts.
+2020-11-21 15:03:06,456 (pid-7882): density=0.05, 11-round starts.
+2020-11-21 15:03:13,919 (pid-7888): density=0.05, 14-round starts.
+2020-11-21 15:03:12,643 (pid-7884): density=0.05, 12-round starts.
+2020-11-21 15:03:12,545 (pid-7891): density=0.05, 13-round starts.
+2020-11-21 15:03:18,829 (pid-7892): density=0.05, 15-round starts.
+2020-11-21 15:03:19,759 (pid-7894): density=0.05, 16-round starts.
+2020-11-21 15:04:52,810 (pid-7895): density=0.05, 17-round starts.
+2020-11-21 15:08:31,389 (pid-7908): density=0.05, 19-round starts.
+2020-11-21 15:08:32,321 (pid-7903): density=0.05, 20-round starts.
+2020-11-21 15:08:31,675 (pid-7896): density=0.05, 18-round starts.
+2020-11-21 15:08:33,506 (pid-7904): density=0.10,  1-round starts.
+2020-11-21 15:08:40,556 (pid-7905): density=0.10,  2-round starts.
+2020-11-21 15:09:28,082 (pid-7906): density=0.10,  3-round starts.
+2020-11-21 15:09:31,522 (pid-7897): density=0.10,  4-round starts.
+2020-11-21 15:10:07,350 (pid-7910): density=0.10,  5-round starts.
+2020-11-21 15:10:28,745 (pid-7909): density=0.10,  6-round starts.
+2020-11-21 15:11:56,589 (pid-7911): density=0.10,  7-round starts.
+2020-11-21 15:12:31,253 (pid-7912): density=0.10,  8-round starts.
+2020-11-21 15:12:37,088 (pid-7915): density=0.10, 10-round starts.
+2020-11-21 15:12:36,285 (pid-7913): density=0.10,  9-round starts.
+2020-11-21 15:13:50,444 (pid-7914): density=0.10, 11-round starts.
+2020-11-21 15:15:25,605 (pid-7916): density=0.10, 12-round starts.
+2020-11-21 15:17:06,000 (pid-7918): density=0.10, 13-round starts.
+2020-11-21 15:17:11,086 (pid-7924): density=0.10, 15-round starts.
+2020-11-21 15:17:10,878 (pid-7919): density=0.10, 14-round starts.
+2020-11-21 15:18:11,943 (pid-7928): density=0.10, 16-round starts.
+2020-11-21 15:18:59,182 (pid-7929): density=0.10, 17-round starts.
+2020-11-21 15:19:00,186 (pid-7930): density=0.10, 18-round starts.
+2020-11-21 15:20:19,085 (pid-7932): density=0.10, 19-round starts.
+2020-11-21 15:20:26,129 (pid-7934): density=0.10, 20-round starts.
+2020-11-21 15:22:40,035 (pid-7935): density=0.15,  1-round starts.
+2020-11-21 15:23:01,274 (pid-7938): density=0.15,  3-round starts.
+2020-11-21 15:23:00,531 (pid-7936): density=0.15,  2-round starts.
+2020-11-21 15:24:28,916 (pid-7943): density=0.15,  4-round starts.
+2020-11-21 15:25:02,868 (pid-7944): density=0.15,  5-round starts.
+2020-11-21 15:28:50,810 (pid-7942): density=0.15,  6-round starts.
+2020-11-21 15:30:13,524 (pid-7946): density=0.15,  7-round starts.
+2020-11-21 15:30:30,922 (pid-7957): density=0.15,  8-round starts.
+2020-11-21 15:30:35,269 (pid-7958): density=0.15,  9-round starts.
+2020-11-21 15:31:22,523 (pid-7959): density=0.15, 10-round starts.
+2020-11-21 15:31:23,884 (pid-7960): density=0.15, 11-round starts.
+2020-11-21 15:36:58,942 (pid-7962): density=0.15, 12-round starts.
+2020-11-21 15:38:16,791 (pid-7977): density=0.15, 13-round starts.
+2020-11-21 15:40:00,438 (pid-7981): density=0.15, 15-round starts.
+2020-11-21 15:39:59,439 (pid-7979): density=0.15, 14-round starts.
+2020-11-21 15:43:53,410 (pid-7985): density=0.15, 18-round starts.
+2020-11-21 15:43:51,326 (pid-7982): density=0.15, 16-round starts.
+2020-11-21 15:43:52,258 (pid-7983): density=0.15, 17-round starts.
+2020-11-21 15:43:54,559 (pid-7986): density=0.15, 19-round starts.
+2020-11-21 15:44:00,387 (pid-7996): density=0.15, 20-round starts.
+2020-11-21 15:44:01,810 (pid-7997): density=0.20,  1-round starts.
