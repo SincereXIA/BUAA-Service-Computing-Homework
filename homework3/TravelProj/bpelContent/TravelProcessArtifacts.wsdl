@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://travel.buaa.sumblog.cn/bpel/sample" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://travel" xmlns:wsdl1="http://legal" xmlns:wsdl2="http://age" xmlns:wsdl3="http://gender" xmlns:wsdl4="http://province" name="TravelProcess" targetNamespace="http://travel.buaa.sumblog.cn/bpel/sample">
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     TYPE DEFINITION - List of types participating in this BPEL process 
+     The BPEL Designer will generate default request and response types
+     but you can define or import any XML Schema type and use them as part 
+     of the message types.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <plnk:partnerLinkType name="pay">
+    <plnk:role name="payment" portType="wsdl:payService"/>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="legalPLT">
+    <plnk:role name="legalPort" portType="wsdl1:LegalService"/>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="agePTL">
+    <plnk:role name="ageRole" portType="wsdl2:AgeService"/>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="genderPTL">
+    <plnk:role name="genderPort" portType="wsdl3:GenderService"/>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="provincePTL">
+    <plnk:role name="provincePort" portType="wsdl4:ProvinceService"/>
+  </plnk:partnerLinkType>
+    <import location="payService.wsdl" namespace="http://travel"/>
+    <import location="LegalService.wsdl" namespace="http://legal"/>
+    <import location="AgeService.wsdl" namespace="http://age"/>
+    <import location="GenderService.wsdl" namespace="http://gender"/>
+    <import location="ProvinceService.wsdl" namespace="http://province"/>
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://travel.buaa.sumblog.cn/bpel/sample">
+
+            <element name="TravelProcessRequest">
+                <complexType>
+                    <sequence>
+                    	<element name="cardID" type="string"/>
+                    	<element name="key" type="string"/>
+                    </sequence>
+                </complexType>
+            </element>
+
+            <element name="TravelProcessResponse">
+                <complexType>
+                    <sequence>
+                    	<element name="result" type="string"/>
+                    	<element name="moneyleft" type="double"/>
+                    	<element name="isLegal" type="int"/>
+                    	<element name="province" type="string"/>
+                    	<element name="gender" type="string"/>
+                    	<element name="age" type="int"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+    </types>
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     MESSAGE TYPE DEFINITION - Definition of the message types used as 
+     part of the port type defintions
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <message name="TravelProcessRequestMessage">
+        <part element="tns:TravelProcessRequest" name="payload"/>
+    </message>
+    <message name="TravelProcessResponseMessage">
+        <part element="tns:TravelProcessResponse" name="payload"/>
+    </message>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     PORT TYPE DEFINITION - A port type groups a set of operations into
+     a logical service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+
+    <!-- portType implemented by the TravelProcess BPEL process -->
+    <portType name="TravelProcess">
+        <operation name="process">
+            <input message="tns:TravelProcessRequestMessage"/>
+            <output message="tns:TravelProcessResponseMessage"/>
+        </operation>
+    </portType>   
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     PARTNER LINK TYPE DEFINITION
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <plnk:partnerLinkType name="TravelProcess">
+        <plnk:role name="TravelProcessProvider" portType="tns:TravelProcess"/>
+    </plnk:partnerLinkType>
+    
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     BINDING DEFINITION - Defines the message format and protocol details
+     for a web service.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <binding name="TravelProcessBinding" type="tns:TravelProcess">
+    	<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    	<operation name="process">
+    		<soap:operation soapAction="http://travel.buaa.sumblog.cn/bpel/sample/process"/>
+    		<input>
+    			<soap:body use="literal"/>
+    		</input>
+    		<output>
+    			<soap:body use="literal"/>
+    		</output>
+    	</operation>
+    </binding>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     SERVICE DEFINITION - A service groups a set of ports into
+     a service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <service name="TravelProcessService">
+    	<port binding="tns:TravelProcessBinding" name="TravelProcessPort">
+    		<soap:address location="http://localhost:8080/ode/processes/TravelProj/TravelProcess"/>
+    	</port>
+    </service>
+</definitions>

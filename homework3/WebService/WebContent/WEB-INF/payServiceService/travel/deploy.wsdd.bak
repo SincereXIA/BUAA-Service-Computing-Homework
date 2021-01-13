@@ -1,0 +1,29 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from payServiceService WSDL service -->
+
+  <service name="payService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://travel"/>
+      <parameter name="wsdlServiceElement" value="payServiceService"/>
+      <parameter name="schemaQualified" value="http://travel"/>
+      <parameter name="wsdlServicePort" value="payService"/>
+      <parameter name="className" value="travel.PayServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="payService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="pay" qname="operNS:pay" xmlns:operNS="http://travel" returnQName="retNS:payReturn" xmlns:retNS="http://travel" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:key" xmlns:pns="http://travel" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="pay"/>
+
+  </service>
+</deployment>

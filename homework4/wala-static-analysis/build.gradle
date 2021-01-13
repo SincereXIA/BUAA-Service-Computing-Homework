@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'buaa.sincerexia'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.ibm.wala', name: 'com.ibm.wala.util', version: '1.5.5'
+    compile group: 'com.ibm.wala', name: 'com.ibm.wala.core', version: '1.5.5'
+    compile group: 'com.ibm.wala', name: 'com.ibm.wala.shrike', version: '1.5.5'
+    compile group: 'com.ibm.wala', name: 'com.ibm.wala.cast', version: '1.5.5'
+}

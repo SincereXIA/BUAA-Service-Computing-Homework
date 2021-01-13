@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://travel" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://travel" xmlns:intf="http://travel" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://travel" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="pay">
+    <complexType>
+     <sequence>
+      <element name="cost" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="payResponse">
+    <complexType>
+     <sequence>
+      <element name="payReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="payRequest">
+
+      <wsdl:part element="impl:pay" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="payResponse">
+
+      <wsdl:part element="impl:payResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="payService">
+
+      <wsdl:operation name="pay">
+
+         <wsdl:input message="impl:payRequest" name="payRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:payResponse" name="payResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="payServiceSoapBinding" type="impl:payService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="pay">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="payRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="payResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="payServiceService">
+
+      <wsdl:port binding="impl:payServiceSoapBinding" name="payService">
+
+         <wsdlsoap:address location="http://localhost:8080/TravelWebservice/services/payService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

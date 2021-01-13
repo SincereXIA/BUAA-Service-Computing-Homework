@@ -1,0 +1,117 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="C:\Program Files\apache-tomcat-7.0.107\wtpwebapps\WebService\WEB-INF\attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:service name="GenderService" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="getSex" qname="ns1:getSex" returnQName="ns1:getSexReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://gender" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:id" type="xsd:string"/>
+  </ns2:operation>
+  <ns1:parameter name="allowedMethods" value="getSex"/>
+  <ns1:parameter name="wsdlPortType" value="GenderService"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://gender"/>
+  <ns1:parameter name="wsdlServicePort" value="GenderService"/>
+  <ns1:parameter name="className" value="gender.GenderService"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://gender"/>
+  <ns1:parameter name="wsdlServiceElement" value="GenderServiceService"/>
+ </ns1:service>
+ <ns1:service name="LegalService" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="isLegal" qname="ns2:isLegal" returnQName="ns2:isLegalReturn" returnType="xsd:int" soapAction="" xmlns:ns2="http://legal" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:id" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="isLegal"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="LegalService"/>
+  <ns1:parameter name="className" value="legal.LegalService"/>
+  <ns1:parameter name="wsdlServicePort" value="LegalService"/>
+  <ns1:parameter name="schemaQualified" value="http://legal"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://legal"/>
+  <ns1:parameter name="wsdlServiceElement" value="LegalServiceService"/>
+ </ns1:service>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="payService" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="pay" qname="ns3:pay" returnQName="ns3:payReturn" returnType="xsd:double" soapAction="" xmlns:ns3="http://travel" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:key" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="pay"/>
+  <ns1:parameter name="wsdlPortType" value="payService"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://travel"/>
+  <ns1:parameter name="wsdlServicePort" value="payService"/>
+  <ns1:parameter name="className" value="travel.payService"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://travel"/>
+  <ns1:parameter name="wsdlServiceElement" value="payServiceService"/>
+ </ns1:service>
+ <ns1:service name="AgeService" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="getAge" qname="ns4:getAge" returnQName="ns4:getAgeReturn" returnType="xsd:int" soapAction="" xmlns:ns4="http://age" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:cardID" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="getAge"/>
+  <ns1:parameter name="wsdlPortType" value="AgeService"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://age"/>
+  <ns1:parameter name="wsdlServicePort" value="AgeService"/>
+  <ns1:parameter name="className" value="age.AgeService"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://age"/>
+  <ns1:parameter name="wsdlServiceElement" value="AgeServiceService"/>
+ </ns1:service>
+ <ns1:service name="ProvinceService" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="getProvince" qname="ns5:getProvince" returnQName="ns5:getProvinceReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://province" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns5:id" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="getProvince"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="ProvinceService"/>
+  <ns1:parameter name="className" value="province.ProvinceService"/>
+  <ns1:parameter name="wsdlServicePort" value="ProvinceService"/>
+  <ns1:parameter name="schemaQualified" value="http://province"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://province"/>
+  <ns1:parameter name="wsdlServiceElement" value="ProvinceServiceService"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>
