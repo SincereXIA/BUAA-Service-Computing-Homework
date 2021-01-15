@@ -1,0 +1,30 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "<Application,Lorg/apache/hadoop/hbase/replication/ReplicationLoadSink>" [ label="<Application,Lorg/apache/hadoop/hbase/replication/ReplicationLoadSink>"]
+   "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaLoadBalanceSelector>" [ label="<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaLoadBalanceSelector>"]
+   "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode>" [ label="<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode>"]
+   "<Application,Lorg/apache/hadoop/hbase/replication/ReplicationPeerConfig$ReplicationPeerConfigBuilderImpl>" [ label="<Application,Lorg/apache/hadoop/hbase/replication/ReplicationPeerConfig$ReplicationPeerConfigBuilderImpl>"]
+   "<Application,Lorg/apache/hadoop/hbase/client/RegionReplicaUtil>" [ label="<Application,Lorg/apache/hadoop/hbase/client/RegionReplicaUtil>"]
+   "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaLoadBalanceSimpleSelector>" [ label="<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaLoadBalanceSimpleSelector>"]
+   "<Application,Lorg/apache/hadoop/hbase/replication/ReplicationPeerConfig>" [ label="<Application,Lorg/apache/hadoop/hbase/replication/ReplicationPeerConfig>"]
+   "<Application,Lorg/apache/hadoop/hbase/replication/SyncReplicationState>" [ label="<Application,Lorg/apache/hadoop/hbase/replication/SyncReplicationState>"]
+   "<Application,Lorg/apache/hadoop/hbase/replication/ReplicationPeerConfig$1>" [ label="<Application,Lorg/apache/hadoop/hbase/replication/ReplicationPeerConfig$1>"]
+   "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode$1>" [ label="<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode$1>"]
+   "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode$2>" [ label="<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode$2>"]
+   "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode$3>" [ label="<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode$3>"]
+   "<Application,Lorg/apache/hadoop/hbase/client/RawAsyncHBaseAdmin$ReplicationProcedureBiConsumer>" [ label="<Application,Lorg/apache/hadoop/hbase/client/RawAsyncHBaseAdmin$ReplicationProcedureBiConsumer>"]
+   "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaLoadBalanceSimpleSelector$StaleLocationCacheEntry>" [ label="<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaLoadBalanceSimpleSelector$StaleLocationCacheEntry>"]
+   "<Application,Lorg/apache/hadoop/hbase/replication/ReplicationPeerDescription>" [ label="<Application,Lorg/apache/hadoop/hbase/replication/ReplicationPeerDescription>"]
+   "<Application,Lorg/apache/hadoop/hbase/replication/ReplicationLoadSource$1>" [ label="<Application,Lorg/apache/hadoop/hbase/replication/ReplicationLoadSource$1>"]
+   "<Application,Lorg/apache/hadoop/hbase/replication/ReplicationLoadSource>" [ label="<Application,Lorg/apache/hadoop/hbase/replication/ReplicationLoadSource>"]
+   "<Application,Lorg/apache/hadoop/hbase/client/replication/ReplicationPeerConfigUtil>" [ label="<Application,Lorg/apache/hadoop/hbase/client/replication/ReplicationPeerConfigUtil>"]
+   "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaLoadBalanceSelectorFactory>" [ label="<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaLoadBalanceSelectorFactory>"]
+   "<Application,Lorg/apache/hadoop/hbase/replication/ReplicationLoadSource$ReplicationLoadSourceBuilder>" [ label="<Application,Lorg/apache/hadoop/hbase/replication/ReplicationLoadSource$ReplicationLoadSourceBuilder>"]
+   "<Application,Lorg/apache/hadoop/hbase/replication/ReplicationPeerConfigBuilder>" [ label="<Application,Lorg/apache/hadoop/hbase/replication/ReplicationPeerConfigBuilder>"]
+ "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaLoadBalanceSelector>" -> "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaLoadBalanceSimpleSelector>" 
+ "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode>" -> "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode$1>" 
+ "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode>" -> "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode$2>" 
+ "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode>" -> "<Application,Lorg/apache/hadoop/hbase/client/CatalogReplicaMode$3>" 
+ "<Application,Lorg/apache/hadoop/hbase/replication/ReplicationPeerConfigBuilder>" -> "<Application,Lorg/apache/hadoop/hbase/replication/ReplicationPeerConfig$ReplicationPeerConfigBuilderImpl>" 
+
+}

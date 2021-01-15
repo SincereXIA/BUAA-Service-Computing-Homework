@@ -53,9 +53,9 @@ public class PDFTypeHierarchy {
     // This example takes one command-line argument, so args[1] should be the "-classpath" parameter
     static final int CLASSPATH_INDEX = 1;
 
-    public static final String DOT_FILE = "temp.dt";
+    public static final String DOT_FILE = "hbaseServer.dt";
 
-    private static final String PDF_FILE = "th.pdf";
+    private static final String PDF_FILE = "hbaseServer.pdf";
 
     public static Properties p;
 
@@ -76,11 +76,12 @@ public class PDFTypeHierarchy {
     public static Process run(String[] args) throws IOException {
         String OUTPUT_DIR = "/Users/zhangjh/workspace/homework/BUAA-Service-Computing-Homework/homework4/output";
         try {
-            //validateCommandLine(args);
+            String hbaseClient = "/Users/zhangjh/workspace/homework/BUAA-Service-Computing-Homework/homework4/hbase/hbase-client/target/hbase-client-3.0.0-SNAPSHOT.jar";
+            String hbaseServer = "/Users/zhangjh/workspace/homework/BUAA-Service-Computing-Homework/homework4/hbase/hbase-server/target/hbase-server-3.0.0-SNAPSHOT.jar";
             String classpath = "/Users/zhangjh/workspace/homework/BUAA-Service-Computing-Homework/homework4/cassandra/build/apache-cassandra-4.0-beta4-SNAPSHOT.jar";
             AnalysisScope scope =
                     AnalysisScopeReader.makeJavaBinaryAnalysisScope(
-                            classpath, (new FileProvider()).getFile(CallGraphTestUtil.REGRESSION_EXCLUSIONS));
+                            hbaseServer, (new FileProvider()).getFile(CallGraphTestUtil.REGRESSION_EXCLUSIONS));
 
            // scope.setExclusions(new FileOfClasses(new ByteArrayInputStream(EXCLUSIONS.getBytes()))); // 排除部分类
             // invoke WALA to build a class hierarchy
